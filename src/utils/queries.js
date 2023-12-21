@@ -42,3 +42,14 @@ export const GET_TRABAJO = gql`
     }
   }
 `;
+
+export const LIST_PRODUCT = gql`
+  query {
+    listProducts {
+      nombre
+      sku
+      precio
+      descripcion
+    }
+  }
+`;

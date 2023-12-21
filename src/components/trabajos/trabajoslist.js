@@ -16,8 +16,8 @@ function TrabajosList() {
   });
 
   const [postularAtrabajo, { loading: loadingPostulacion, error: errorPostulacion }] = useMutation(POSTULAR_MUTATION, {
-    onCompleted: () => alert('Postulación enviada!'),
-    onError: () => alert('Error al enviar la postulación'),
+    onCompleted: () => alert('Postulaci贸n enviada!'),
+    onError: () => alert('Error al enviar la postulaci贸n'),
     refetchQueries: [{ query: GET_POSTULACIONES, variables: { userID: user?.id } }],
   });
 
@@ -29,7 +29,7 @@ function TrabajosList() {
     if (postulaciones && Array.isArray(postulaciones)) {
       const postulacion = postulaciones.find(postulacion => {
         if (!postulacion.trabajo || !postulacion.trabajo.id) {
-          console.error("Postulación sin trabajo asociado o sin ID de trabajo:", postulacion);
+          console.error("Postulaci贸n sin trabajo asociado o sin ID de trabajo:", postulacion);
           return false;
         }
         console.log("Comparando", String(postulacion.trabajo.id), String(trabajoID));
@@ -50,7 +50,7 @@ function TrabajosList() {
   
   const handlePostular = async (trabajoID) => {
     if (!user) {
-      alert('Debes iniciar sesión para postularte a un trabajo.');
+      alert('Debes iniciar sesi贸n para postularte a un trabajo.');
       return;
     }
 
@@ -106,5 +106,4 @@ function TrabajosList() {
     </Container>
   );
 }
-
 export default TrabajosList;

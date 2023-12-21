@@ -33,6 +33,10 @@ function Navigation() {
               </>
             ) : (
               <>
+                <LinkContainer to="/carrito">
+                  <Nav.Link>Carrito</Nav.Link>
+                </LinkContainer>
+              
                 <LinkContainer to="/register">
                   <Nav.Link>Registrarse</Nav.Link>
                 </LinkContainer>
