@@ -6,6 +6,10 @@ import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import kakashiImage from '../../images/Zapatilla_Kakashi.jpeg';
 import narutoImage from '../../images/Zapatilla_Naruto.jpeg';
 import gaaraImage from '../../images/Zapatilla_Gaara.jpeg';
+import gokuImage from '../../images/Zapatilla_Goku.jpeg';
+import luffyImage from '../../images/Zapatilla_Luffy.jpeg';
+import lawImage from '../../images/LAW.jpg';
+import anyaImage from '../../images/Zapatilla-Anya.jpeg';
 
 function Bienvenida() {
   const { user, setUser, handleLogout } = useAuth();
@@ -30,9 +34,13 @@ function Bienvenida() {
 
   // Objeto que asocia SKU con imágenes
   const skuToImage = {
-    '223456789xyz': kakashiImage,
-    '233456789xyz': narutoImage,
-    '243456789xyz': gaaraImage,
+    'KAK003': kakashiImage,
+    'NAR103': narutoImage,
+    'GAR789': gaaraImage,
+    'GOK001': gokuImage,
+    'LUFF001': luffyImage,
+    'LAW001': lawImage,
+    'ANY001': anyaImage,
   };
 
   const addToCart = (producto) => {

@@ -15,7 +15,7 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <LinkContainer to="/trabajos">
+            <LinkContainer to="/">
               <Nav.Link>Tienda de Zapatillas Personalizada</Nav.Link>
             </LinkContainer>
             {user ? (
@@ -33,15 +33,15 @@ function Navigation() {
               </>
             ) : (
               <>
-                <LinkContainer to="/carrito">
-                  <Nav.Link>Carrito</Nav.Link>
-                </LinkContainer>
-              
+
                 <LinkContainer to="/register">
                   <Nav.Link>Registrarse</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/login">
                   <Nav.Link>Iniciar sesión</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/logout">
+                  <Nav.Link>Cerrar sesion</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/crear-trabajo">
                   <Nav.Link>Crear producto</Nav.Link>

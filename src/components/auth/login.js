@@ -20,7 +20,7 @@ function Login() {
     try {
       await handleLogin({ correo, contrasena });
       setTimeout(() => {
-        navigate('/trabajos');
+        navigate('/');
       }, 2000);
     } catch (err) {
       console.error("Error en inicio de sesión:", err);

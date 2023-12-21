@@ -9,6 +9,7 @@ import Navigation from "./navigation/navigation";
 import Postulaciones from "./components/postulaciones/postulaciones";
 import EditarTrabajo from "./components/trabajos/actualizar.trabajo";
 import MiPerfil from "./components/perfil/miperfil";
+import Logout from "./components/auth/logout";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/crear-trabajo" element={<CrearTrabajo />} />
       <Route path="/postulaciones" element={<Postulaciones />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
       <Route path="/perfil" element={<MiPerfil />} />
         <Route path="/register" element={<Register />} />
         <Route path="/trabajos" element={<TrabajosList />} />

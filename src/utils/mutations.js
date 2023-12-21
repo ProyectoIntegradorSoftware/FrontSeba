@@ -86,3 +86,23 @@ export const ACTUALIZAR_TRABAJO = gql`
     }
   }
 `;
+
+export const CREAR_PRODUCTO = gql`
+  mutation CreateProduct($input: CreateProductInput!) {
+    createProduct(createProductInput: $input) {
+      id
+      nombre
+      sku
+      precio
+      descripcion
+    }
+  }
+`;
+
+export const LOGOUT_USER = gql`
+  mutation LogoutUser {
+    logoutUser {
+      mensaje
+    }
+  }
+`;

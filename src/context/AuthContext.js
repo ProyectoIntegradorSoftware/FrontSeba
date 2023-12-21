@@ -1,24 +1,23 @@
 import React, { createContext, useContext, useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_MUTATION, REGISTER_MUTATION } from '../utils/mutations';
+import { LOGIN_MUTATION, REGISTER_MUTATION, LOGOUT_USER } from '../utils/mutations';
 
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [token, setToken]= useState(localStorage.getItem('token') || '');
+  const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [loginMutation] = useMutation(LOGIN_MUTATION);
   const [registerMutation] = useMutation(REGISTER_MUTATION);
+  const [logoutMutation] = useMutation(LOGOUT_USER);
 
   const handleLogin = async (input) => {
     try {
       const { data } = await loginMutation({ variables: { input } });
       if (data && data.login) {
-        console.log(data.login.usuario);
         setUser(data.login.usuario);
         localStorage.setItem('token', data.login.token);
         localStorage.setItem('user', JSON.stringify(data.login.usuario));
-
       }
     } catch (error) {
       console.error('Error during login', error);
@@ -39,9 +38,15 @@ export function AuthProvider({ children }) {
     }
   };
 
-  const handleLogout = () => {
-    setUser(null);
-    localStorage.removeItem('token');
+  const handleLogout = async () => {
+    try {
+      await logoutMutation();
+      setUser(null);
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    } catch (error) {
+      console.error('Error during logout', error);
+    }
   };
 
   return (
