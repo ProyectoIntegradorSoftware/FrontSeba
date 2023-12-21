@@ -1,0 +1,22 @@
+.register-container {
+    min-height: 80vh;
+  }
+  
+  .register-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    background-color: #f9f9f9;
+  }
+  
+  .register-title {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .register-button {
+    padding: 8px 16px;
+    font-size: 18px;
+    width: 100%; /* Asegúrate de que el botón ocupe todo el ancho del contenedor */
+  }
+  
